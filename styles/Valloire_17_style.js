@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_PAVs_mauriennebrutALL_13 = function(feature, resolution){
+var style_Valloire_17 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -9,8 +9,8 @@ var style_PAVs_mauriennebrutALL_13 = function(feature, resolution){
     var value = ""
     var labelText = "";
     var clusteredFeatures = feature.get("features");
-    var labelFont = "7.800000000000001px \'Helvetica\', sans-serif";
-    var labelFill = "#323232";
+    var labelFont = "6.5px \'Helvetica\', sans-serif";
+    var labelFill = "#561718";
     var bufferColor = "";
     var bufferWidth = 0;
     size = clusteredFeatures.length;
@@ -32,7 +32,7 @@ var style_PAVs_mauriennebrutALL_13 = function(feature, resolution){
     }
     var style = [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.0 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.0}), fill: new ol.style.Fill({color: 'rgba(225,89,137,1.0)'})}),
+            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.0}), fill: new ol.style.Fill({color: 'rgba(152,125,183,1.0)'})}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)

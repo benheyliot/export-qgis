@@ -4,12 +4,15 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-         maxZoom: 28, minZoom: 1
+         maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
+            code: 'EPSG:3857',
+            //extent: [-20037508.342789, -20037508.342789, 20037508.342789, 20037508.342789],
+            units: 'm'})
     })
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([711243.102901, 5642560.029106, 733363.892321, 5656257.544575], map.getSize());
+map.getView().fit([695447.516498, 5629046.333862, 780869.284731, 5683540.644058], map.getSize());
 
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
@@ -112,8 +115,8 @@ var featureOverlay = new ol.layer.Vector({
     updateWhileInteracting: true // optional, for instant visual feedback
 });
 
-var doHighlight = false;
-var doHover = false;
+var doHighlight = true;
+var doHover = true;
 
 function createPopupField(currentFeature, currentFeatureKeys, layer) {
     var popupText = '';
@@ -457,6 +460,12 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 
 //layerswitcher
 
+var layerSwitcher = new ol.control.LayerSwitcher({
+    tipLabel: "Layers",
+    target: 'top-right-container'
+});
+map.addControl(layerSwitcher);
+    
 
 
 

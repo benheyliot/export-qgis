@@ -1,3 +1,5 @@
+ol.proj.proj4.register(proj4);
+//ol.proj.get("EPSG:3857").setExtent([695447.516498, 5629046.333862, 780869.284731, 5683540.644058]);
 var wms_layers = [];
 
 
@@ -25,7 +27,7 @@ var wms_layers = [];
 
         var lyr_CouvertureLiveObjects_2 = new ol.layer.Tile({
             'title': 'Couverture Live Objects',
-            'opacity': 0.364000,
+            'opacity': 0.426000,
             
             
             source: new ol.source.XYZ({
@@ -36,7 +38,7 @@ var wms_layers = [];
 
         var lyr_CouvertureLTEMOrange_3 = new ol.layer.Tile({
             'title': 'Couverture LTE-M Orange',
-            'opacity': 0.333000,
+            'opacity': 0.628000,
             
             
             source: new ol.source.XYZ({
@@ -191,6 +193,69 @@ var lyr_PAVs_mauriennebrutALL_13 = new ol.layer.Vector({
                 interactive: true,
                 title: '<img src="styles/legend/PAVs_mauriennebrutALL_13.png" /> PAVs_maurienne - brut ALL'
             });
+var format_Valmeinier_14 = new ol.format.GeoJSON();
+var features_Valmeinier_14 = format_Valmeinier_14.readFeatures(json_Valmeinier_14, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Valmeinier_14 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Valmeinier_14.addFeatures(features_Valmeinier_14);
+var lyr_Valmeinier_14 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Valmeinier_14, 
+                style: style_Valmeinier_14,
+                popuplayertitle: "Valmeinier",
+                interactive: true,
+                title: '<img src="styles/legend/Valmeinier_14.png" /> Valmeinier'
+            });
+var format_BonnevalsurArc_15 = new ol.format.GeoJSON();
+var features_BonnevalsurArc_15 = format_BonnevalsurArc_15.readFeatures(json_BonnevalsurArc_15, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_BonnevalsurArc_15 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_BonnevalsurArc_15.addFeatures(features_BonnevalsurArc_15);
+var lyr_BonnevalsurArc_15 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_BonnevalsurArc_15, 
+                style: style_BonnevalsurArc_15,
+                popuplayertitle: "Bonneval sur Arc",
+                interactive: true,
+                title: '<img src="styles/legend/BonnevalsurArc_15.png" /> Bonneval sur Arc'
+            });
+var format_VillarodinBourgetLaNorma_16 = new ol.format.GeoJSON();
+var features_VillarodinBourgetLaNorma_16 = format_VillarodinBourgetLaNorma_16.readFeatures(json_VillarodinBourgetLaNorma_16, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_VillarodinBourgetLaNorma_16 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_VillarodinBourgetLaNorma_16.addFeatures(features_VillarodinBourgetLaNorma_16);
+var lyr_VillarodinBourgetLaNorma_16 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_VillarodinBourgetLaNorma_16, 
+                style: style_VillarodinBourgetLaNorma_16,
+                popuplayertitle: "Villarodin-Bourget La Norma",
+                interactive: true,
+                title: '<img src="styles/legend/VillarodinBourgetLaNorma_16.png" /> Villarodin-Bourget La Norma'
+            });
+var format_Valloire_17 = new ol.format.GeoJSON();
+var features_Valloire_17 = format_Valloire_17.readFeatures(json_Valloire_17, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Valloire_17 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Valloire_17.addFeatures(features_Valloire_17);cluster_Valloire_17 = new ol.source.Cluster({
+  distance: 10,
+  source: jsonSource_Valloire_17
+});
+var lyr_Valloire_17 = new ol.layer.Vector({
+                declutter: false,
+                source:cluster_Valloire_17, 
+                style: style_Valloire_17,
+                popuplayertitle: "Valloire",
+                interactive: true,
+                title: '<img src="styles/legend/Valloire_17.png" /> Valloire'
+            });
 var group_1009092435_Survey_Hte_Maurienne_Oct24 = new ol.layer.Group({
                                 layers: [lyr_1009092435_Survey_Hte_Maurienne_Oct24_10,lyr_1009092435_Survey_Hte_Maurienne_Oct24_11,lyr_1009092435_Survey_Hte_Maurienne_Oct24_12,],
                                 fold: "open",
@@ -204,8 +269,8 @@ var group_1009103435_Survey_Hte_Maurienne_Oct24V3 = new ol.layer.Group({
                                 fold: "open",
                                 title: "1009103435_Survey_Hte_Maurienne_Oct24V3"});
 
-lyr_CouvertureSigfox_0.setVisible(true);lyr_OpenStreetMap_1.setVisible(true);lyr_CouvertureLiveObjects_2.setVisible(true);lyr_CouvertureLTEMOrange_3.setVisible(true);lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_4.setVisible(true);lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_5.setVisible(true);lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_6.setVisible(true);lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_7.setVisible(true);lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_8.setVisible(true);lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_9.setVisible(true);lyr_1009092435_Survey_Hte_Maurienne_Oct24_10.setVisible(true);lyr_1009092435_Survey_Hte_Maurienne_Oct24_11.setVisible(true);lyr_1009092435_Survey_Hte_Maurienne_Oct24_12.setVisible(true);lyr_PAVs_mauriennebrutALL_13.setVisible(true);
-var layersList = [lyr_CouvertureSigfox_0,lyr_OpenStreetMap_1,lyr_CouvertureLiveObjects_2,lyr_CouvertureLTEMOrange_3,group_1009103435_Survey_Hte_Maurienne_Oct24V3,group_1009102840_Survey_Hte_Maurienne_Oct24V2,group_1009092435_Survey_Hte_Maurienne_Oct24,lyr_PAVs_mauriennebrutALL_13];
+lyr_CouvertureSigfox_0.setVisible(true);lyr_OpenStreetMap_1.setVisible(true);lyr_CouvertureLiveObjects_2.setVisible(true);lyr_CouvertureLTEMOrange_3.setVisible(true);lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_4.setVisible(true);lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_5.setVisible(true);lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_6.setVisible(true);lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_7.setVisible(true);lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_8.setVisible(true);lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_9.setVisible(true);lyr_1009092435_Survey_Hte_Maurienne_Oct24_10.setVisible(true);lyr_1009092435_Survey_Hte_Maurienne_Oct24_11.setVisible(true);lyr_1009092435_Survey_Hte_Maurienne_Oct24_12.setVisible(true);lyr_PAVs_mauriennebrutALL_13.setVisible(true);lyr_Valmeinier_14.setVisible(true);lyr_BonnevalsurArc_15.setVisible(true);lyr_VillarodinBourgetLaNorma_16.setVisible(true);lyr_Valloire_17.setVisible(true);
+var layersList = [lyr_CouvertureSigfox_0,lyr_OpenStreetMap_1,lyr_CouvertureLiveObjects_2,lyr_CouvertureLTEMOrange_3,group_1009103435_Survey_Hte_Maurienne_Oct24V3,group_1009102840_Survey_Hte_Maurienne_Oct24V2,group_1009092435_Survey_Hte_Maurienne_Oct24,lyr_PAVs_mauriennebrutALL_13,lyr_Valmeinier_14,lyr_BonnevalsurArc_15,lyr_VillarodinBourgetLaNorma_16,lyr_Valloire_17];
 lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_4.set('fieldAliases', {'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
 lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_5.set('fieldAliases', {'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
 lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_7.set('fieldAliases', {'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
@@ -213,6 +278,10 @@ lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_8.set('fieldAliases', {'Name': 'Name
 lyr_1009092435_Survey_Hte_Maurienne_Oct24_10.set('fieldAliases', {'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
 lyr_1009092435_Survey_Hte_Maurienne_Oct24_11.set('fieldAliases', {'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
 lyr_PAVs_mauriennebrutALL_13.set('fieldAliases', {'#': '#', 'Nom': 'Nom', 'Adresse': 'Adresse', 'Territoire': 'Territoire', 'Centre d\'exploitation': 'Centre d\'exploitation', 'Types Produit': 'Types Produit', 'Contact': 'Contact', 'Carte': 'Carte', 'Position': 'Position', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'LoRa': 'LoRa', 'Couverture LTE-M': 'Couverture LTE-M', 'CS': 'CS', 'Volume CS': 'Volume CS', 'VERRE': 'VERRE', 'Volume Verre': 'Volume Verre', 'OM': 'OM', 'Volume Ordures ménagères': 'Volume Ordures ménagères', });
+lyr_Valmeinier_14.set('fieldAliases', {'#': '#', 'Nom': 'Nom', 'Adresse': 'Adresse', 'Territoire': 'Territoire', 'Centre d\'exploitation': 'Centre d\'exploitation', 'Types Produit': 'Types Produit', 'Contact': 'Contact', 'Carte': 'Carte', 'Position': 'Position', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'LoRa': 'LoRa', 'Couverture LTE-M': 'Couverture LTE-M', 'CS': 'CS', 'Volume CS': 'Volume CS', 'VERRE': 'VERRE', 'Volume Verre': 'Volume Verre', 'OM': 'OM', 'Volume Ordures ménagères': 'Volume Ordures ménagères', });
+lyr_BonnevalsurArc_15.set('fieldAliases', {'#': '#', 'Nom': 'Nom', 'Adresse': 'Adresse', 'Territoire': 'Territoire', 'Centre d\'exploitation': 'Centre d\'exploitation', 'Types Produit': 'Types Produit', 'Contact': 'Contact', 'Carte': 'Carte', 'Position': 'Position', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'LoRa': 'LoRa', 'Couverture LTE-M': 'Couverture LTE-M', 'CS': 'CS', 'Volume CS': 'Volume CS', 'VERRE': 'VERRE', 'Volume Verre': 'Volume Verre', 'OM': 'OM', 'Volume Ordures ménagères': 'Volume Ordures ménagères', });
+lyr_VillarodinBourgetLaNorma_16.set('fieldAliases', {'#': '#', 'Nom': 'Nom', 'Adresse': 'Adresse', 'Territoire': 'Territoire', 'Centre d\'exploitation': 'Centre d\'exploitation', 'Types Produit': 'Types Produit', 'Contact': 'Contact', 'Carte': 'Carte', 'Position': 'Position', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'LoRa': 'LoRa', 'Couverture LTE-M': 'Couverture LTE-M', 'CS': 'CS', 'Volume CS': 'Volume CS', 'VERRE': 'VERRE', 'Volume Verre': 'Volume Verre', 'OM': 'OM', 'Volume Ordures ménagères': 'Volume Ordures ménagères', });
+lyr_Valloire_17.set('fieldAliases', {'#': '#', 'Nom': 'Nom', 'Adresse': 'Adresse', 'Territoire': 'Territoire', 'Centre d\'exploitation': 'Centre d\'exploitation', 'Types Produit': 'Types Produit', 'Contact': 'Contact', 'Carte': 'Carte', 'Position': 'Position', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'LoRa': 'LoRa', 'Couverture LTE-M': 'Couverture LTE-M', 'CS': 'CS', 'Volume CS': 'Volume CS', 'VERRE': 'VERRE', 'Volume Verre': 'Volume Verre', 'OM': 'OM', 'Volume Ordures ménagères': 'Volume Ordures ménagères', });
 lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_4.set('fieldImages', {'Name': '', 'description': '', 'timestamp': '', 'begin': '', 'end': '', 'altitudeMode': '', 'tessellate': '', 'extrude': '', 'visibility': '', 'drawOrder': '', 'icon': '', });
 lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_5.set('fieldImages', {'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
 lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_7.set('fieldImages', {'Name': '', 'description': '', 'timestamp': '', 'begin': '', 'end': '', 'altitudeMode': '', 'tessellate': '', 'extrude': '', 'visibility': '', 'drawOrder': '', 'icon': '', });
@@ -220,6 +289,10 @@ lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_8.set('fieldImages', {'Name': '', 'd
 lyr_1009092435_Survey_Hte_Maurienne_Oct24_10.set('fieldImages', {'Name': '', 'description': '', 'timestamp': '', 'begin': '', 'end': '', 'altitudeMode': '', 'tessellate': '', 'extrude': '', 'visibility': '', 'drawOrder': '', 'icon': '', });
 lyr_1009092435_Survey_Hte_Maurienne_Oct24_11.set('fieldImages', {'Name': '', 'description': '', 'timestamp': '', 'begin': '', 'end': '', 'altitudeMode': '', 'tessellate': '', 'extrude': '', 'visibility': '', 'drawOrder': '', 'icon': '', });
 lyr_PAVs_mauriennebrutALL_13.set('fieldImages', {'#': 'TextEdit', 'Nom': 'TextEdit', 'Adresse': 'TextEdit', 'Territoire': 'TextEdit', 'Centre d\'exploitation': 'TextEdit', 'Types Produit': 'TextEdit', 'Contact': 'TextEdit', 'Carte': 'TextEdit', 'Position': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'LoRa': 'TextEdit', 'Couverture LTE-M': 'TextEdit', 'CS': 'Range', 'Volume CS': 'TextEdit', 'VERRE': 'Range', 'Volume Verre': 'TextEdit', 'OM': 'Range', 'Volume Ordures ménagères': 'TextEdit', });
+lyr_Valmeinier_14.set('fieldImages', {'#': 'Range', 'Nom': 'TextEdit', 'Adresse': 'TextEdit', 'Territoire': 'TextEdit', 'Centre d\'exploitation': 'TextEdit', 'Types Produit': 'TextEdit', 'Contact': 'TextEdit', 'Carte': 'TextEdit', 'Position': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'LoRa': 'TextEdit', 'Couverture LTE-M': 'TextEdit', 'CS': 'Range', 'Volume CS': 'TextEdit', 'VERRE': 'CheckBox', 'Volume Verre': 'TextEdit', 'OM': 'Range', 'Volume Ordures ménagères': 'TextEdit', });
+lyr_BonnevalsurArc_15.set('fieldImages', {'#': 'Range', 'Nom': 'TextEdit', 'Adresse': 'TextEdit', 'Territoire': 'TextEdit', 'Centre d\'exploitation': 'TextEdit', 'Types Produit': 'TextEdit', 'Contact': 'TextEdit', 'Carte': 'TextEdit', 'Position': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'LoRa': 'TextEdit', 'Couverture LTE-M': 'TextEdit', 'CS': 'Range', 'Volume CS': 'TextEdit', 'VERRE': 'CheckBox', 'Volume Verre': 'TextEdit', 'OM': 'Range', 'Volume Ordures ménagères': 'TextEdit', });
+lyr_VillarodinBourgetLaNorma_16.set('fieldImages', {'#': 'Range', 'Nom': 'TextEdit', 'Adresse': 'TextEdit', 'Territoire': 'TextEdit', 'Centre d\'exploitation': 'TextEdit', 'Types Produit': 'TextEdit', 'Contact': 'TextEdit', 'Carte': 'TextEdit', 'Position': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'LoRa': 'TextEdit', 'Couverture LTE-M': 'TextEdit', 'CS': 'Range', 'Volume CS': 'TextEdit', 'VERRE': 'CheckBox', 'Volume Verre': 'TextEdit', 'OM': 'Range', 'Volume Ordures ménagères': 'TextEdit', });
+lyr_Valloire_17.set('fieldImages', {'#': 'Range', 'Nom': 'TextEdit', 'Adresse': 'TextEdit', 'Territoire': 'TextEdit', 'Centre d\'exploitation': 'TextEdit', 'Types Produit': 'TextEdit', 'Contact': 'TextEdit', 'Carte': 'TextEdit', 'Position': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'LoRa': 'TextEdit', 'Couverture LTE-M': 'TextEdit', 'CS': 'Range', 'Volume CS': 'TextEdit', 'VERRE': 'CheckBox', 'Volume Verre': 'TextEdit', 'OM': 'Range', 'Volume Ordures ménagères': 'TextEdit', });
 lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_4.set('fieldLabels', {'Name': 'no label', 'description': 'no label', 'timestamp': 'no label', 'begin': 'no label', 'end': 'no label', 'altitudeMode': 'no label', 'tessellate': 'no label', 'extrude': 'no label', 'visibility': 'no label', 'drawOrder': 'no label', 'icon': 'no label', });
 lyr_1009103435_Survey_Hte_Maurienne_Oct24V3_5.set('fieldLabels', {'Name': 'no label', 'description': 'no label', 'timestamp': 'no label', 'begin': 'no label', 'end': 'no label', 'altitudeMode': 'no label', 'tessellate': 'no label', 'extrude': 'no label', 'visibility': 'no label', 'drawOrder': 'no label', 'icon': 'no label', });
 lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_7.set('fieldLabels', {'Name': 'no label', 'description': 'no label', 'timestamp': 'no label', 'begin': 'no label', 'end': 'no label', 'altitudeMode': 'no label', 'tessellate': 'no label', 'extrude': 'no label', 'visibility': 'no label', 'drawOrder': 'no label', 'icon': 'no label', });
@@ -227,6 +300,10 @@ lyr_1009102840_Survey_Hte_Maurienne_Oct24V2_8.set('fieldLabels', {'Name': 'no la
 lyr_1009092435_Survey_Hte_Maurienne_Oct24_10.set('fieldLabels', {'Name': 'no label', 'description': 'no label', 'timestamp': 'no label', 'begin': 'no label', 'end': 'no label', 'altitudeMode': 'no label', 'tessellate': 'no label', 'extrude': 'no label', 'visibility': 'no label', 'drawOrder': 'no label', 'icon': 'no label', });
 lyr_1009092435_Survey_Hte_Maurienne_Oct24_11.set('fieldLabels', {'Name': 'no label', 'description': 'no label', 'timestamp': 'no label', 'begin': 'no label', 'end': 'no label', 'altitudeMode': 'no label', 'tessellate': 'no label', 'extrude': 'no label', 'visibility': 'no label', 'drawOrder': 'no label', 'icon': 'no label', });
 lyr_PAVs_mauriennebrutALL_13.set('fieldLabels', {'#': 'no label', 'Nom': 'hidden field', 'Adresse': 'no label', 'Territoire': 'no label', 'Centre d\'exploitation': 'inline label - always visible', 'Types Produit': 'no label', 'Contact': 'no label', 'Carte': 'no label', 'Position': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'LoRa': 'no label', 'Couverture LTE-M': 'no label', 'CS': 'no label', 'Volume CS': 'no label', 'VERRE': 'no label', 'Volume Verre': 'no label', 'OM': 'no label', 'Volume Ordures ménagères': 'no label', });
-lyr_PAVs_mauriennebrutALL_13.on('precompose', function(evt) {
+lyr_Valmeinier_14.set('fieldLabels', {'#': 'no label', 'Nom': 'no label', 'Adresse': 'no label', 'Territoire': 'no label', 'Centre d\'exploitation': 'no label', 'Types Produit': 'no label', 'Contact': 'no label', 'Carte': 'no label', 'Position': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'LoRa': 'no label', 'Couverture LTE-M': 'no label', 'CS': 'no label', 'Volume CS': 'no label', 'VERRE': 'no label', 'Volume Verre': 'no label', 'OM': 'no label', 'Volume Ordures ménagères': 'no label', });
+lyr_BonnevalsurArc_15.set('fieldLabels', {'#': 'no label', 'Nom': 'no label', 'Adresse': 'no label', 'Territoire': 'no label', 'Centre d\'exploitation': 'no label', 'Types Produit': 'no label', 'Contact': 'no label', 'Carte': 'no label', 'Position': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'LoRa': 'no label', 'Couverture LTE-M': 'no label', 'CS': 'no label', 'Volume CS': 'no label', 'VERRE': 'no label', 'Volume Verre': 'no label', 'OM': 'no label', 'Volume Ordures ménagères': 'no label', });
+lyr_VillarodinBourgetLaNorma_16.set('fieldLabels', {'#': 'no label', 'Nom': 'no label', 'Adresse': 'no label', 'Territoire': 'no label', 'Centre d\'exploitation': 'no label', 'Types Produit': 'no label', 'Contact': 'no label', 'Carte': 'no label', 'Position': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'LoRa': 'no label', 'Couverture LTE-M': 'no label', 'CS': 'no label', 'Volume CS': 'no label', 'VERRE': 'no label', 'Volume Verre': 'no label', 'OM': 'no label', 'Volume Ordures ménagères': 'no label', });
+lyr_Valloire_17.set('fieldLabels', {'#': 'no label', 'Nom': 'no label', 'Adresse': 'no label', 'Territoire': 'no label', 'Centre d\'exploitation': 'no label', 'Types Produit': 'no label', 'Contact': 'no label', 'Carte': 'no label', 'Position': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'LoRa': 'no label', 'Couverture LTE-M': 'no label', 'CS': 'no label', 'Volume CS': 'no label', 'VERRE': 'no label', 'Volume Verre': 'no label', 'OM': 'no label', 'Volume Ordures ménagères': 'no label', });
+lyr_Valloire_17.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
